@@ -11,5 +11,6 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 @RestResource(exported = false)
 public interface PanelRepository extends PagingAndSortingRepository<Panel, Long> {
+  Panel findFirstBySerial(String serial);
   Panel findBySerial(String serial);
 }

@@ -3,6 +3,8 @@ package com.crossover.techtrial.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * DailyElectricity class will hold sum, average,minimum and maximum electricity for a given day.
  * @author Crossover
@@ -13,16 +15,28 @@ public class DailyElectricity implements Serializable {
   
   private static final long serialVersionUID = 3605549122072628877L;
 
+  @JsonProperty("date") 
   private LocalDate date;
   
+  @JsonProperty("sum") 
   private Long sum;
   
+  @JsonProperty("average") 
   private Double average;
   
+  @JsonProperty("min") 
   private Long min;
   
+  @JsonProperty("max") 
   private Long max;
 
+  public DailyElectricity() {
+	  this.sum = 0l;
+	  this.min = 0l;
+	  this.max = 0l;
+	  this.average = 0.0;
+  }
+  
   public LocalDate getDate() {
     return date;
   }

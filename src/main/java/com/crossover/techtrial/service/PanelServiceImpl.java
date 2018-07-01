@@ -26,7 +26,11 @@ public class PanelServiceImpl implements PanelService {
     panelRepository.save(panel);
   }
   
-  public Panel findBySerial(String serial) {
-    return panelRepository.findBySerial(serial);
+  public Panel findFirstBySerial(String serial) {
+    return panelRepository.findFirstBySerial(serial);
   }
+  
+  public Panel findBySerial(String serial) {
+	    return panelRepository.findBySerial(serial);
+	  }
 }

@@ -16,5 +16,7 @@ public interface PanelService {
   
   void register(Panel panel);
   
+  Panel findFirstBySerial(String serial);
+  
   Panel findBySerial(String serial);
 }

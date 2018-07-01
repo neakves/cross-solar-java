@@ -1,8 +1,8 @@
 package com.crossover.techtrial.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +30,6 @@ public class HourlyElectricity implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
   
-  @JsonIgnore
   @ManyToOne
   @JoinColumn(name = "panel_id", referencedColumnName = "id")
   Panel panel;
